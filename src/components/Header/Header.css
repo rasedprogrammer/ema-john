@@ -16,3 +16,17 @@
 .header a:hover {
 	color: sandybrown;
 }
+.btn-signOut {
+	margin-left: 36px;
+	border: 2px solid sandybrown;
+	border-radius: 15px;
+	background: transparent;
+	color: #fff;
+	font-size: 17px;
+	padding: 10px 20px;
+}
+.btn-signOut:hover {
+	background-color: sandybrown;
+	cursor: pointer;
+	color: #000000;
+}
