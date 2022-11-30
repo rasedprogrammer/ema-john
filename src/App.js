@@ -5,10 +5,11 @@ import Shop from "./components/Shop/Shop";
 import Orders from "./components/Orders/Orders";
 import Inventory from "./components/Inventory/Inventory";
 import Shipping from "./components/Shipping/Shipping";
-import { productsAndCartLoader } from "./loaders/productsAndCartLoader";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import About from "./components/About/About";
+import PrivateRoute from "../src/routes/PrivateRoute";
+import { productsAndCartLoader } from "./loaders/productsAndCartLoader";
 
 function App() {
 	const router = createBrowserRouter([
@@ -41,9 +42,20 @@ function App() {
 				},
 				{
 					path: "/shipping",
-					element: <Shipping></Shipping>,
+					element: (
+						<PrivateRoute>
+							<Shipping></Shipping>
+						</PrivateRoute>
+					),
 				},
-				{ path: "/inventory", element: <Inventory></Inventory> },
+				{
+					path: "/inventory",
+					element: (
+						<PrivateRoute>
+							<Inventory></Inventory>
+						</PrivateRoute>
+					),
+				},
 			],
 		},
 	]);
